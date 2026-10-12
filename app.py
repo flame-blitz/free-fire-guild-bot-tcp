@@ -19,6 +19,7 @@ from Crypto.Util.Padding import pad, unpad
 import random
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
+from network_utils import parse_host_port
 
 
 
@@ -3821,8 +3822,8 @@ async def MaiiiinE():
     LoGinDaTaUncRypTinG = await DecRypTLoGinDaTa(LoGinDaTa)
     OnLinePorTs = LoGinDaTaUncRypTinG.Online_IP_Port
     ChaTPorTs = LoGinDaTaUncRypTinG.AccountIP_Port
-    OnLineiP , OnLineporT = OnLinePorTs.split(":")
-    ChaTiP , ChaTporT = ChaTPorTs.split(":")
+    OnLineiP, OnLineporT = parse_host_port(OnLinePorTs)
+    ChaTiP, ChaTporT = parse_host_port(ChaTPorTs)
     acc_name = LoGinDaTaUncRypTinG.AccountName
     #print(acc_name)
     
